@@ -1,0 +1,54 @@
+.Paginate {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul.Paginate li {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #e2e2e2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+ul.Paginate li:first-child{
+  border-radius: 5px 0 0 5px;
+}
+
+ul.Paginate li:last-child{
+  border-radius: 0 5px 5px 0;
+}
+
+ul.Paginate li a {
+  text-decoration: none;
+  color:  green;
+  font-size: 1rem;
+}
+
+ul.Paginate li.active a {
+  color: white;
+}
+
+ul.Paginate li.active {
+  background-color: green;
+}
+
+ul.Paginate li a:hover,
+ul.Paginate li a.active {
+  color: green;
+}
+
+.page-selection {
+  width: 48px;
+  height: 30px;
+  color: green;
+}
