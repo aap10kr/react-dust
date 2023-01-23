@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Modal from 'react-modal';
 import './modals.css';
 
+
 Modal.setAppElement('#root')
 const Modals = () => {
     
@@ -18,11 +19,15 @@ const Modals = () => {
                 </button>
             </div>
             <Modal isOpen={modalIsOpen} className="modal">
-                <section className='w-3/6 h-4/6 bg-white'>
-                    <div className='h-5/6'>
-                        This is Modal content
+                <section className='w-3/6 h-4/6 pt-8 bg-white'>
+                    <div className='h-5/6 overflow-y-auto'>
+                        <img src='../../../imgs/modal_img1.png' alt='modal-img'/>
+                        <img src='../../../imgs/modal_img2.png' alt='modal-img' className='pt-10'/>
+                        <img src='../../../imgs/modal_img3.png' alt='modal-img' className='pt-10'/>
                     </div>
-                    <button className='h-1/6' onClick={()=> setModalIsOpen(false)}>닫기</button>
+                    <div className='w-full flex justify-center items-center h-1/6'>
+                        <button className='px-6 py-2 rounded shadow-md bg-green-600 text-white' onClick={()=> setModalIsOpen(false)}>확인</button>
+                    </div>
                 </section>
             </Modal>
         </>
