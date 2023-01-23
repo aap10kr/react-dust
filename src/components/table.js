@@ -1,5 +1,6 @@
-import React, { useState }          from "react";
-import Paginate                     from "react-paginate";
+import React, { useState }   from "react";
+import Paginate              from "react-paginate";
+import Modals                from "./modal/modals.js"
 import "./main.css";
 
 const Table = (props) => {
@@ -39,9 +40,9 @@ const Table = (props) => {
                     <div className="mr-2">
                         {
                             (function(){
-                                if(spot.pm10Value >= 30){
+                                if(spot.pm10Value >= 80){
                                     return ( <div className="bg-red-400 w-4 h-4 rounded-full"></div> )
-                                }else if(spot.pm10Value >= 20){
+                                }else if(spot.pm10Value >= 70){
                                     return ( <div className="bg-yellow-400 w-4 h-4 rounded-full"></div> )
                                 }else if(spot.pm10Value >= 0){
                                     return ( <div className="bg-green-400 w-4 h-4 rounded-full"></div> )
@@ -118,16 +119,21 @@ const Table = (props) => {
                     {displayUsers}
                 </tbody>
             </table>
-            <Paginate
-                breakLabel="..."
-                nextLabel=">"
-                onPageChange={changePage}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                previousLabel="<"
-                renderOnZeroPageCount={null}
-                className="Paginate"
-            />
+            <div>
+                <Paginate
+                    breakLabel="..."
+                    nextLabel=">"
+                    onPageChange={changePage}
+                    pageRangeDisplayed={5}
+                    pageCount={pageCount}
+                    previousLabel="<"
+                    renderOnZeroPageCount={null}
+                    className="Paginate"
+                /> 
+                <div>
+                    <Modals/>
+                </div>
+            </div>
         </div>
     );
 }
